@@ -22,21 +22,6 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=770918572551961&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-    <script>
-  function trackWhatsappAndOpen(a){
-    try {
-      var eventId = 'wapp-' + Date.now() + '-' + Math.random().toString(36).slice(2);
-      // Usa evento estándar "Contact" (recomendado por Meta para intención de contacto)
-      fbq('track', 'Contact', {channel: 'whatsapp', location: 'button'}, { eventID: eventId });
-      // Abre en nueva pestaña tras un microdelay para asegurar el envío
-      setTimeout(function(){ window.open(a.href, '_blank', 'noopener'); }, 120);
-      return false; // evita la navegación inmediata del <a>
-    } catch(e){
-      // fallback si fbq no está
-      window.open(a.href, '_blank', 'noopener');
-      return false;
-    }
-  }
 </script>
     <style>
         .subtitulo {
@@ -391,7 +376,7 @@ src="https://www.facebook.com/tr?id=770918572551961&ev=PageView&noscript=1"
         <a href="https://wa.me/5492236970462?text=Hola%20quiero%20mi%20bono%20del%20200%%20extra"
    class="btn-whatsapp"
    rel="noopener"
-   onclick="return trackWhatsappAndOpen(this);">
+   onclick="fbq('track', 'Contact');">
   Reclamar Bono en WhatsApp
 </a>
         <p class="parrafo">🎰 +6000 SLOTS Y RULETAS EXCLUSIVAS🎰</p>
@@ -408,7 +393,7 @@ src="https://www.facebook.com/tr?id=770918572551961&ev=PageView&noscript=1"
         <a href="https://wa.me/5492236970462?text=Hola%20quiero%20mi%20bono%20del%20200%%20extra"
    class="btn-whatsapp"
    rel="noopener"
-   onclick="return trackWhatsappAndOpen(this);">
+   onclick="fbq('track', 'Contact');>
   Reclamar Bono en WhatsApp
 </a>
     </main>
